@@ -1,6 +1,6 @@
 # 🐳 dockit
 
-[![CI](https://github.com/vineethkrishnan/dockit/actions/workflows/ci.yml/badge.svg)](https://github.com/vineethkrishnan/dockit/actions/workflows/ci.yml)
+[![CI](https://github.com/vineethkrishnan/dockit/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/vineethkrishnan/dockit/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 `dockit` is a safe, intelligent, audit-first Docker disk analysis and cleanup CLI built in Go.
