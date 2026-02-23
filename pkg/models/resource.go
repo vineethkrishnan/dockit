@@ -20,18 +20,35 @@ type ResourceSummary struct {
 	Reclaimable int64 `json:"reclaimable"`
 }
 
+// Score represents the safety classification of a resource.
+type Score string
+
+const (
+	ScoreSafe      Score = "SAFE"
+	ScoreReview    Score = "REVIEW"
+	ScoreProtected Score = "PROTECTED"
+)
+
+// ScoredResource provides common fields for scoring.
+type ScoredResource struct {
+	Score  Score  `json:"score"`
+	Reason string `json:"reason"`
+}
+
 // Image represents a parsed Docker image.
 type Image struct {
-	ID          string    `json:"id"`
-	RepoTags    []string  `json:"repo_tags"`
-	Size        int64     `json:"size"`
-	Created     time.Time `json:"created"`
-	Containers  int64     `json:"containers"` // Number of containers using this image
-	Dangling    bool      `json:"dangling"`
+	ScoredResource
+	ID         string    `json:"id"`
+	RepoTags   []string  `json:"repo_tags"`
+	Size       int64     `json:"size"`
+	Created    time.Time `json:"created"`
+	Containers int64     `json:"containers"` // Number of containers using this image
+	Dangling   bool      `json:"dangling"`
 }
 
 // Container represents a parsed Docker container.
 type Container struct {
+	ScoredResource
 	ID        string    `json:"id"`
 	Names     []string  `json:"names"`
 	State     string    `json:"state"` // running, exited, etc.
@@ -45,6 +62,7 @@ type Container struct {
 
 // Volume represents a parsed Docker volume.
 type Volume struct {
+	ScoredResource
 	Name       string    `json:"name"`
 	Driver     string    `json:"driver"`
 	Mountpoint string    `json:"mountpoint"`
