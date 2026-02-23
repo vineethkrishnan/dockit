@@ -1,8 +1,7 @@
 package main
 
 import (
-	"fmt"
-	"os"
+	"github.com/vineethkrishnan/dockit/cmd"
 )
 
 var (
@@ -12,13 +11,7 @@ var (
 )
 
 func main() {
-	if err := run(); err != nil {
-		fmt.Fprintf(os.Stderr, "error: %v\n", err)
-		os.Exit(1)
-	}
-}
-
-func run() error {
-	fmt.Printf("dockit cli - version %s (commit: %s, built at: %s)\n", version, commit, date)
-	return nil
+	// Tell the command package about the version variables injected by GoReleaser
+	cmd.SetVersion(version, commit, date)
+	cmd.Execute()
 }
