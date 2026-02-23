@@ -5,6 +5,12 @@ import (
 	"os"
 )
 
+var (
+	version = "dev"
+	commit  = "none"
+	date    = "unknown"
+)
+
 func main() {
 	if err := run(); err != nil {
 		fmt.Fprintf(os.Stderr, "error: %v\n", err)
@@ -13,6 +19,6 @@ func main() {
 }
 
 func run() error {
-	fmt.Println("dockit cli - version 0.1.0-dev")
+	fmt.Printf("dockit cli - version %s (commit: %s, built at: %s)\n", version, commit, date)
 	return nil
 }
