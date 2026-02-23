@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.4](https://github.com/vineethkrishnan/dockit/compare/dockit-v0.1.3...dockit-v0.1.4) (2026-02-23)
+
+
+### Bug Fixes
+
+* format code to resolve CI formatting failures ([0749a79](https://github.com/vineethkrishnan/dockit/commit/0749a7937b4cac8364ab732d891c9bc1e1db11d0))
+
 ## [0.1.3](https://github.com/vineethkrishnan/dockit/compare/dockit-v0.1.2...dockit-v0.1.3) (2026-02-23)
 
 
