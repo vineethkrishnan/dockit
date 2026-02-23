@@ -70,3 +70,12 @@ type Volume struct {
 	Size       int64     `json:"size"`
 	UsageCount int64     `json:"usage_count"` // Number of containers using this volume
 }
+
+// LogMetrics represents a parsed Docker container's log file metadata.
+type LogMetrics struct {
+	ContainerID   string `json:"container_id"`
+	ContainerName string `json:"container_name"`
+	LogPath       string `json:"log_path"`
+	LogSize       int64  `json:"log_size"`      // Size of the raw json-file on disk
+	HasLogDriver  bool   `json:"has_log_driver"`
+}
