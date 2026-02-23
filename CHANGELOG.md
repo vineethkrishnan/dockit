@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.3](https://github.com/vineethkrishnan/dockit/compare/dockit-v0.1.2...dockit-v0.1.3) (2026-02-23)
+
+
+### Features
+
+* implement dockit logs for large file sizing ([e665efd](https://github.com/vineethkrishnan/dockit/commit/e665efd6411d53b3a25189512bc76fe42a9cdf13))
+* implement interactive dockit clean engine ([78a7698](https://github.com/vineethkrishnan/dockit/commit/78a769872d63ecb01b89c38531d46376d309892c))
+
 ## [0.1.2](https://github.com/vineethkrishnan/dockit/compare/dockit-v0.1.1...dockit-v0.1.2) (2026-02-23)
 
 
