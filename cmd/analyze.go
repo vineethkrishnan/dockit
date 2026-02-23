@@ -53,7 +53,7 @@ func runAnalyze(cmd *cobra.Command, args []string) error {
 
 	// Score Data
 	engine := scorer.NewScorer(scorer.DefaultConfig)
-	
+
 	for _, c := range correlated.Containers {
 		engine.ScoreContainer(c)
 	}

@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	
+
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/dustin/go-humanize"
 	"github.com/vineethkrishnan/dockit/internal/analyzer"
@@ -29,8 +29,8 @@ type targetResource struct {
 
 // CleanupPlan organizes what needs to happen.
 type CleanupPlan struct {
-	Targets      []targetResource
-	TotalTargets int
+	Targets        []targetResource
+	TotalTargets   int
 	SpaceToReclaim int64
 }
 

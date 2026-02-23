@@ -59,7 +59,7 @@ func printLogsJSON(data []*models.LogMetrics) error {
 func printLogsTable(engine *logger.Engine, data []*models.LogMetrics, totalSize int64) {
 	fmt.Printf("\n--- CONTAINER LOG SIZES (Total: %s) ---\n", humanize.Bytes(uint64(totalSize)))
 	fmt.Printf("%-20s %-15s %s\n", "CONTAINER", "SIZE", "WARNINGS")
-	
+
 	for _, m := range data {
 		name := m.ContainerName
 		if len(name) > 18 {

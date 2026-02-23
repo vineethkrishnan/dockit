@@ -46,7 +46,7 @@ func (c *Client) GetImages(ctx context.Context) ([]*models.Image, error) {
 	res := make([]*models.Image, 0, len(rawImages))
 	for _, img := range rawImages {
 		dangling := false
-		// Docker represents dangling images by setting the RepoTags to <none>:<none> usually, 
+		// Docker represents dangling images by setting the RepoTags to <none>:<none> usually,
 		// but the SDK uses the labels or simply having empty tags.
 		if len(img.RepoTags) == 0 || (len(img.RepoTags) == 1 && img.RepoTags[0] == "<none>:<none>") {
 			dangling = true

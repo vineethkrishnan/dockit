@@ -41,18 +41,30 @@ func runClean(cmd *cobra.Command, args []string) error {
 
 	fmt.Println("Analyzing disk usage...")
 	containers, err := client.GetContainers(ctx)
-	if err != nil { return err }
+	if err != nil {
+		return err
+	}
 	images, err := client.GetImages(ctx)
-	if err != nil { return err }
+	if err != nil {
+		return err
+	}
 	volumes, err := client.GetVolumes(ctx)
-	if err != nil { return err }
+	if err != nil {
+		return err
+	}
 
 	// Correlate & Score
 	correlated := analyzer.Analyze(containers, images, volumes)
 	engine := scorer.NewScorer(scorer.DefaultConfig)
-	for _, c := range correlated.Containers { engine.ScoreContainer(c) }
-	for _, i := range correlated.Images { engine.ScoreImage(i) }
-	for _, v := range correlated.Volumes { engine.ScoreVolume(v) }
+	for _, c := range correlated.Containers {
+		engine.ScoreContainer(c)
+	}
+	for _, i := range correlated.Images {
+		engine.ScoreImage(i)
+	}
+	for _, v := range correlated.Volumes {
+		engine.ScoreVolume(v)
+	}
 
 	// Build the deletion plan securely
 	plan := cleaner.BuildPlan(correlated)

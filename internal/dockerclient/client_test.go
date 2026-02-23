@@ -9,7 +9,7 @@ func TestNewClient_NoDaemon(t *testing.T) {
 	// this allows the go test to run in CI even when a docker daemon is not available.
 	// We only run this to verify the code can be executed.
 	t.Log("Verifying client creation...")
-	
+
 	// Create a client with no options to test the function signature.
 	client, err := NewClient()
 

@@ -29,7 +29,7 @@ func (c *Client) GetLogMetrics(ctx context.Context) ([]*models.LogMetrics, error
 		if len(cnt.Names) > 0 {
 			name = cnt.Names[0]
 		}
-		
+
 		m := &models.LogMetrics{
 			ContainerID:   cnt.ID,
 			ContainerName: name,
