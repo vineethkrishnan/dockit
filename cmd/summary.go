@@ -21,8 +21,13 @@ Images, Containers, Volumes, and Build Cache.`,
 	RunE: runSummary,
 }
 
+var (
+	summaryQuiet bool
+)
+
 func init() {
 	rootCmd.AddCommand(summaryCmd)
+	summaryCmd.Flags().BoolVarP(&summaryQuiet, "quiet", "q", false, "Only print reclaimable space amount")
 }
 
 func runSummary(cmd *cobra.Command, args []string) error {
@@ -44,6 +49,11 @@ func runSummary(cmd *cobra.Command, args []string) error {
 
 	if OutputJSON {
 		return printJSON(summary)
+	}
+
+	if summaryQuiet {
+		fmt.Printf("%s\n", humanize.Bytes(uint64(summary.Reclaimable)))
+		return nil
 	}
 
 	printTable(summary)
