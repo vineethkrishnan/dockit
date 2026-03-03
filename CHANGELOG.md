@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.5](https://github.com/vineethkrishnan/dockit/compare/dockit-v0.1.4...dockit-v0.1.5) (2026-03-03)
+
+
+### Features
+
+* add quiet flag to summary ([595457d](https://github.com/vineethkrishnan/dockit/commit/595457df073702399261a938e0b19feba20a208a))
+
 ## [0.1.4](https://github.com/vineethkrishnan/dockit/compare/dockit-v0.1.3...dockit-v0.1.4) (2026-02-23)
 
 
